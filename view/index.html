@@ -1,14 +1,14 @@
 <!DOCTYPE>
 <html ng-app="myApp">
 <head>
+<link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
-  <title>Contact List App</title>
+  <title>Phone List</title>
 <body>
   <div class="container" ng-controller="AppCtrl">
-    <h1>Contact List App</h1>
+    <h1>My Phone List</h1>
 
     <table class="table">
       <thead>
@@ -23,15 +23,14 @@
         <tr>
           <td><input class="form-control" ng-model="contact.name"></td>
           <td><input class="form-control" ng-model="contact.number"></td>
+          <!-- Calling the addContact function from the controller.js-->
           <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
-          <td>
-            <button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;
-            <button class="btn btn-info" ng-click="deselect()">Clear</button>
-          </td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
         </tr>
         <tr ng-repeat="contact in phonelist">
           <td>{{contact.name}}</td>
           <td>{{contact.number}}</td>
+          <!-- Call the remove function from the controller.js and passing the contact id-->
           <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
           <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
         </tr>
