@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var mongojs = require("mongojs");
-var db = mongojs("mongodb://evo:evo@ds139959.mlab.com:39959/phonelist", ["phonelist"]);
+var db = mongojs("mongodb://username:password@ds139959.mlab.com:39959/phonelist", ["phonelist"]);
 var bodyParser = require("body-parser");
 
 app.use(express.static(__dirname + "/view"));
